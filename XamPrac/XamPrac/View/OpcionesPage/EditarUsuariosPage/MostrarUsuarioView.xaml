@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Evento="clr-namespace:XamPrac.Behaviors"
+             x:Class="XamPrac.View.OpcionesPage.EditarUsuariosPage.MostrarUsuarioView"
+             xmlns:IT="clr-namespace:XamPrac.ViewModel"
+             >
+    <ContentPage.BindingContext>
+        <IT:MostrarUsuarioViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout  Orientation="Vertical" Margin="10" Padding="10">
+            
+            <Button Text="Crear nuevo usuario" Command="{Binding NuevoUsuarioCommand}"
+                    BorderRadius="10" BackgroundColor="#046462" FontSize="Medium" />
+            
+            <ListView ItemsSource="{Binding ListaUsuario}" HasUnevenRows="True"
+                      Evento:ItemTappedAttached.Command="{Binding ItemTappedCommand}"
+                      SelectedItem="{Binding UsuarioSeleccionado}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Id_Usuario}"/>
+                                <Label Text="{Binding Id_Empleado}" />
+                                <Label Text="{Binding Id_Rol}" />
+                                <Label Text="{Binding Usuario}" />
+                                <Label Text="{Binding Contra}" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

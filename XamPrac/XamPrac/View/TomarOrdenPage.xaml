@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:dr="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.TomarOrdenPage">
+
+    <ContentPage.BindingContext>
+        <dr:TomarOrdenPageViewModel/>
+    </ContentPage.BindingContext>
+<ContentPage.Content>
+    <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Capacidad: " TextColor="Black" 
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding MesaRecibida.Capacidad}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Numero de mesa: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Label Text="{Binding MesaRecibida.NumeroMesa}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Area: " TextColor="Black" 
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding MesaRecibida.Area}" 
+                       Placeholder="Ingrese Area"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Ocupantes: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding MesaRecibida.Ocupantes}" 
+                       x:Name="txtOcupantes" Unfocused="TxtOcupantes_Unfocused"
+                       Placeholder="      Ingrese cantidad de ocupantes      "/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Empleado: " TextColor="Black" 
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding MesaRecibida.Users}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Pasadia: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding MesaRecibida.Pasadia}" 
+                       FontSize="Medium" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Consumible: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding MesaRecibida.Consumible}"
+                       x:Name="lblConsumible" FontSize="Medium" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cliente: " TextColor="Black" 
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding MesaRecibida.Cliente}" Placeholder="Ingrese un Nombre"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

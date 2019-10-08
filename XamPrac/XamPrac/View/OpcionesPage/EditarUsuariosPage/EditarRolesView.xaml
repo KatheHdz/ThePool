@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xp="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.OpcionesPage.EditarUsuariosPage.EditarRolesView">
+
+    <ContentPage.BindingContext>
+        <xp:EditarRolesViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+            <StackLayout>
+                <Label Text="ID Rol : " TextColor="Black" 
+                   FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding RolRecibido.Id_Rol}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+                <Label Text="Roles : " TextColor="Black" 
+                   FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding RolRecibido.Roles}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button x:Name="Actualizar" Text="Actualizar" 
+                        Clicked="Actualizar_Clicked" FontSize="Medium" 
+                        BorderRadius="10" BackgroundColor="#046462"/>
+            </StackLayout>
+
+        </StackLayout>
+
+        
+    </ContentPage.Content>
+</ContentPage>

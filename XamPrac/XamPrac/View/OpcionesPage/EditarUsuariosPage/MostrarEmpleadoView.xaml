@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Evento="clr-namespace:XamPrac.Behaviors"
+             xmlns:IT="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.OpcionesPage.EditarUsuariosPage.MostrarEmpleadoView">
+
+    <ContentPage.BindingContext>
+        <IT:MostrarEmpleadoViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+
+        <StackLayout  Orientation="Vertical" Margin="10" Padding="10">
+            <Button Text="Crear nuevo Empleado" Command="{Binding NuevoEmpleadoCommand}"
+                    BorderRadius="10" BackgroundColor="#046462" FontSize="Medium"/>
+            
+            <ListView ItemsSource="{Binding ListaEmpleado}" HasUnevenRows="True"
+                      Evento:ItemTappedAttached.Command="{Binding ItemTappedCommand}"
+                      SelectedItem="{Binding EmpleadoSeleccionado}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Id_Empleado}"/>
+                                <Label Text="{Binding Nombre}" />
+                                <Label Text="{Binding Apellido}" />
+                                <Label Text="{Binding Correo_Electronico}" />
+                                <Label Text="{Binding Telefono}" />
+                                <Label Text="{Binding Direccion}" />
+                                <Label Text="{Binding DUI}" />
+                                <Label Text="{Binding NIT}" />
+                                <Label Text="{Binding AFP}" />
+                                <Label Text="{Binding ISSS}" />
+                                <Label Text="{Binding Fecha_Creacion}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

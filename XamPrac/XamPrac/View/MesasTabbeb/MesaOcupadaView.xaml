@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamPrac.View.MesasTabbeb.MesaOcupadaView" Title="Ocupadas"
+             xmlns:karl="clr-namespace:XamPrac.Behaviors"
+             xmlns:piscina="clr-namespace:XamPrac.ViewModel">
+
+    <ContentPage.BindingContext>
+        <piscina:MesasOcupadasViewModel/>
+    </ContentPage.BindingContext>
+  
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding ListaMesas}" HasUnevenRows="True"
+                      karl:ItemTappedAttached.Command="{Binding ItemTappedCommand}"
+                      SelectedItem="{Binding MesaSeleccionada}" >
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding NumeroMesa}" />
+                                <Label Text="{Binding Area}"/>
+                                <Label Text="{Binding Capacidad}" />
+                                <Label Text="{Binding Ocupantes}"/>
+                                <Label Text="{Binding Estado}"/>
+                                <Label Text="{Binding Relacion}"/>
+                                <Label Text="{Binding Pasadia}"/>
+                                <Label Text="{Binding Consumible}"/>
+                                <Label Text="{Binding Users}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

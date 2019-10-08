@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamPrac.View.MesasTabbeb.HabitacionesView" Title="Habitaciones"
+             xmlns:pera="clr-namespace:XamPrac.Behaviors"
+             xmlns:uva="clr-namespace:XamPrac.ViewModel">
+
+    <ContentPage.BindingContext>
+        <uva:HabitacionesViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ListView ItemsSource="{Binding ListaHabitacion}" HasUnevenRows="True"
+                       pera:ItemTappedAttached.Command="{Binding ItemTappedCommand}"
+                      SelectedItem="{Binding HabitacionSeleccionada}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding NumeroHabitacion}" />
+                                <Label Text="{Binding Users}"/>
+                                <Label Text="{Binding Cliente}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

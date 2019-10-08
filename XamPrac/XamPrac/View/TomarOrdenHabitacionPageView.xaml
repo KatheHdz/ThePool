@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:uva="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.TomarOrdenHabitacionPageView">
+    
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Numero de habitacion: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Label Text="{Binding HabitacionRecibida.NumeroHabitacion}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Empleado: " TextColor="Black" 
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding HabitacionRecibida.Users}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Consumible: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding HabitacionRecibida.Consumible}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cliente: " TextColor="Black" 
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding HabitacionRecibida.Cliente}" Placeholder="Ingrese un Nombre"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

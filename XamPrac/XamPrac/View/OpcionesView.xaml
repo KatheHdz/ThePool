@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamPrac.View.OpcionesView"
+             xmlns:Op="clr-namespace:XamPrac.ViewModel"
+             Title="Opciones del menu"
+             >
+    <ContentPage.BindingContext>
+        <Op:OpcionesViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout>
+                <Button Text="Registro de Usuarios" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Empleados" Command="{Binding IrEmpleadosCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Rol" Command="{Binding IrRolesCommand}" />
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Areas" Command="{Binding IrAreasCommand}"/>
+            </StackLayout>
+
+            <!--<StackLayout>
+                <Button Text="Registro de Area Impresion" Command="{Binding IrAreasImpresionCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Mesas" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>
+
+          <StackLayout>
+                <Button Text="Registro de Categorias" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Subcategorias" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Productos" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de Sabores de producto" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Registro de tamaños de producto" Command="{Binding IrUsersCommand}"/>
+            </StackLayout>-->
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

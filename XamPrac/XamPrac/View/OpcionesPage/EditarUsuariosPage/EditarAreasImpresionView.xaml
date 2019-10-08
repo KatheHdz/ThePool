@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:xp="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.OpcionesPage.EditarUsuariosPage.EditarAreasImpresionView">
+
+    <ContentPage.BindingContext>
+        <xp:EditarAreasImpresionViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+
+            <StackLayout>
+                <Label Text="ID Area : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Label Text="{Binding AreaRecibida.Id_AreaImpresion}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Area : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding AreaRecibida.Nombre_Area}" 
+                       Placeholder="     Ingrese Area     " FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Descripcion : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding AreaRecibida.Ruta_Impresor}" 
+                       Placeholder="   Ingrese Ruta Impresor   " FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button x:Name="Actualizar" Text="Actualizar"
+                        Clicked="Actualizar_Clicked" FontSize="Medium" 
+                        BackgroundColor="#046462" BorderRadius="10"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

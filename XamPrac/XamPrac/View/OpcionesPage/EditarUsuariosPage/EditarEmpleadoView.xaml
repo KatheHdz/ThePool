@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xp="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.OpcionesPage.EditarUsuariosPage.EditarEmpleadoView">
+
+    <ContentPage.BindingContext>
+        <xp:EditarEmpleadoViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+        <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="ID Empleado : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Label Text="{Binding EmpleadoRecibido.Id_Empleado}" FontSize="Medium"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.Nombre}" Placeholder="Ingrese Nombre"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Apellido : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.Apellido}" Placeholder="Ingrese Contraseña"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="E-mail : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.Correo_Electronico }" Placeholder="Ingrese E-mail"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Telefono: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.Telefono }" Placeholder="Ingrese Telefono"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Direccion : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.Direccion }" Placeholder="Ingrese Direccion"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="DUI : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.DUI }" Placeholder="   Ingrese DUI   "/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="NIT : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.NIT }" Placeholder="     Ingrese NIT     "/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="AFP : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.AFP }" Placeholder="     Ingrese AFP     "/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="ISSS : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding EmpleadoRecibido.ISSS }" Placeholder="     Ingrese ISSS     "/>
+            </StackLayout>
+
+            <StackLayout>
+                <Label Text="Fecha Creacion : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium"/>
+                <Entry Text="{Binding EmpleadoRecibido.Fecha_Creacion}"  
+                       Placeholder="     Ingrese Fecha     "/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Actualizar" 
+                       Command="{Binding GuardarCommand}" BackgroundColor="#046462"
+                        BorderRadius="10" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Eliminar" Command="{Binding BorrarCommand}"
+                        BackgroundColor="#046462"
+                        BorderRadius="10" FontSize="Medium"/>
+            </StackLayout>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

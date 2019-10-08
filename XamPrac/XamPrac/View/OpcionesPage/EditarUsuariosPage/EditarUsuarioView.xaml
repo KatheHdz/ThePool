@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xp="clr-namespace:XamPrac.ViewModel"
+             x:Class="XamPrac.View.OpcionesPage.EditarUsuariosPage.EditarUsuarioView">
+    
+    <ContentPage.BindingContext>
+        <xp:EditarUsuarioViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" Margin="10" Padding="10">
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="ID Usuario: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Label Text="{Binding UsuarioRecibido.Id_Usuario}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="ID Empleado : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Label Text="{Binding UsuarioRecibido.Id_Empleado}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="ID rol : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Label Text="{Binding UsuarioRecibido.Id_Rol}" FontSize="Medium"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Usuario : " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding UsuarioRecibido.Usuario}" Placeholder="     Ingrese Usuario     "/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <Label Text="Contraseña: " TextColor="Black"
+                       FontAttributes="Italic" FontSize="Medium" />
+                <Entry Text="{Binding UsuarioRecibido.Contra}" Placeholder="Ingrese Contraseña"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Button x:Name="Actualizar" Text="Actualizar" 
+                        Clicked="Actualizar_Clicked" BackgroundColor="#046462" 
+                        BorderRadius="10" FontSize="Medium"/>
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
